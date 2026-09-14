@@ -1,0 +1,12 @@
+.form { margin: 36px 0; padding: clamp(20px, 4vw, 36px); border: 1px solid var(--line); background: var(--paper); }
+.form h2 { margin-top: 0; }
+.field { margin: 24px 0; }
+.field label { display: block; font-weight: 650; font-size: 15px; }
+.field p { margin: 6px 0 10px; font-size: 13px; }
+.field input, .field textarea { width: 100%; padding: 12px; color: var(--ink); background: white; border: 1px solid #81918d; border-radius: 3px; font: inherit; }
+.field textarea { resize: vertical; }
+.field input:focus-visible, .field textarea:focus-visible, .clear:focus-visible { outline: 3px solid var(--cyan-dark); outline-offset: 3px; }
+.note, .status { font-size: 13px; line-height: 1.7; }
+.status { min-height: 2em; color: var(--cyan-dark); }
+.actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.clear { padding: 12px; border: 1px solid var(--line); background: white; font: inherit; cursor: pointer; }

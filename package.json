@@ -16,12 +16,12 @@
     "verify": "npm run check:simulation && npm run check:showcase-path && npm run check:replay && npm run check:proprietary && npm run build && npm run check:seo"
   },
   "dependencies": {
-    "next": "16.2.11",
+    "next": "16.3.5",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },
   "overrides": {
     "postcss": "8.5.23",
-    "sharp": "0.35.3"
+    "sharp": "0.35.4"
   }
 }
