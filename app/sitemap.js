@@ -5,6 +5,12 @@ export const dynamic = "force-static";
 export default function sitemap() {
   return [
     {
+      url: `${siteOrigin}/pilot/`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${siteOrigin}/`,
       lastModified: new Date(),
       changeFrequency: "monthly",

@@ -15,6 +15,7 @@ const requiredFiles = [
   "simulation/index.html",
   "distributed/index.html",
   "privacy/index.html",
+  "pilot/index.html",
   "404.html",
   "icon.svg",
   "llms.txt",
@@ -67,6 +68,13 @@ function assert(condition, message) {
 function read(relativePath) {
   return fs.readFileSync(path.join(outputDirectory, relativePath), "utf8");
 }
+
+const pilotPage = read("pilot/index.html");
+for (const label of ["Download scope worksheet", "Designated reviewer", "SIMULATED", "Data-use approval reference"]) {
+  assert(pilotPage.includes(label), `Pilot worksheet is missing ${label}`);
+}
+assert(pilotPage.includes('action="') === false, "Pilot worksheet must not submit fields to a server");
+assert(read("sitemap.xml").includes(`${siteOrigin}/pilot/`), "Pilot worksheet is missing from sitemap");
 
 const sourceTextExtensions = new Set([
   ".css",

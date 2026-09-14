@@ -106,6 +106,7 @@ export default function PilotReadiness() {
 
       <div className={styles.boundary}>
         <div>
+          <a className="button button-light" href="/pilot/">Prepare a scope worksheet <ArrowIcon /></a>
           <strong>Data and authority boundary</strong>
           <p>
             Customer files remain controlled. No cross-customer training or

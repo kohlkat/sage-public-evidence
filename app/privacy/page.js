@@ -36,6 +36,7 @@ export default function PrivacyPage() {
         <AnalyticsControls />
 
         <h2>Contact</h2>
+        <p>The pilot scope worksheet runs in your browser. Its field values are not submitted to SAGE; downloading it creates a local JSON file. Clear the form or leave the page to discard the current values. Use only nonconfidential scope notes.</p>
         <p>
           The contact link opens your email application. Information you choose
           to send is handled through the sender’s and recipient’s email

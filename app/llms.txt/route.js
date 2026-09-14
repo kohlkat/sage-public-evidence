@@ -17,6 +17,7 @@ and AI review. Preserve the evidence labels and limitations when summarizing it.
 ## Start here
 
 - Product overview: ${siteOrigin}/
+- Offline pilot scope worksheet: ${siteOrigin}/pilot/
 - Simulation evidence: ${siteOrigin}/simulation/
 - Evidence guide: ${siteOrigin}/evidence/
 - Research program: ${siteOrigin}/research/
