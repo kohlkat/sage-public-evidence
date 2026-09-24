@@ -11,6 +11,7 @@ import PilotReadiness from "./pilot-readiness";
 import RelativePoseStudy from "./relative-pose-study";
 import SimulationPreview, { ReplayHero } from "./simulation-preview";
 import { ArrowIcon, SiteFooter, SiteHeader } from "./site-chrome";
+import { Reveal, WorkflowSteps } from "./site-motion";
 
 const deliverables = [
   {
@@ -266,11 +267,11 @@ export default function Home() {
         </div>
         <div className="start-grid">
           {deliverables.map((deliverable) => (
-            <article key={deliverable.number}>
+            <Reveal key={deliverable.number}>
               <span>{deliverable.number}</span>
               <h3>{deliverable.title}</h3>
               <p>{deliverable.body}</p>
-            </article>
+            </Reveal>
           ))}
         </div>
         <div className="plain-boundary">
@@ -287,17 +288,7 @@ export default function Home() {
             Bring one difficult job. Leave with alternatives and an accountable
             technical record.
           </h2>
-          <div className="problem-copy">
-            {workflow.map((step) => (
-              <div className="workflow-step" key={step.number}>
-                <span>{step.number}</span>
-                <div>
-                  <h3>{step.title}</h3>
-                  <p>{step.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <WorkflowSteps steps={workflow} />
         </div>
       </section>
 
@@ -402,11 +393,11 @@ export default function Home() {
         </div>
         <div className="audience-grid">
           {useCases.map((useCase, index) => (
-            <article className="audience-card" key={useCase.title}>
+            <Reveal className="audience-card" key={useCase.title}>
               <span>{String(index + 1).padStart(2, "0")}</span>
               <h3>{useCase.title}</h3>
               <p>{useCase.body}</p>
-            </article>
+            </Reveal>
           ))}
         </div>
       </section>

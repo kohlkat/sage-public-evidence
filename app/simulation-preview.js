@@ -6,6 +6,7 @@ import {
   publicSurfaceSummary,
 } from "../lib/public-results";
 import styles from "./simulation-preview.module.css";
+import { CountUp, MatrixCell } from "./site-motion";
 
 const shapes = [
   ["circle_pocket", "Circle pocket"],
@@ -144,7 +145,11 @@ export default function SimulationPreview() {
             <i>{publicSimulationSummary.evidenceLabel}</i>
           </div>
           <strong>
-            {publicSimulationSummary.medianReductionPercent.toFixed(1)}%
+            <CountUp
+              value={publicSimulationSummary.medianReductionPercent}
+              decimals={1}
+              suffix="%"
+            />
           </strong>
           <h3>lower modeled score than baseline</h3>
           <p>
@@ -176,7 +181,9 @@ export default function SimulationPreview() {
           <div className={styles.resultTopline}>
             <span>Campaign scale</span>
           </div>
-          <strong>{publicSimulationSummary.programCount.toLocaleString()}</strong>
+          <strong>
+            <CountUp value={publicSimulationSummary.programCount} />
+          </strong>
           <h3>software-only shadow programs</h3>
           <p>
             {publicSimulationSummary.programsWithLowerObjective.toLocaleString()}{" "}
@@ -272,12 +279,11 @@ export default function SimulationPreview() {
 
                       return (
                         <td key={material}>
-                          <span
+                          <MatrixCell
                             className={styles.matrixCell}
-                            style={{ "--cell-strength": cell.strength }}
-                          >
-                            {cell.programs}
-                          </span>
+                            programs={cell.programs}
+                            strength={cell.strength}
+                          />
                         </td>
                       );
                     })}
