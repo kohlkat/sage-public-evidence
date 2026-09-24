@@ -2,12 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
-import anime from "animejs/lib/anime.es.js";
+import { animate, engine } from "animejs";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion, useReducedMotion } from "motion/react";
 
-anime.suspendWhenDocumentHidden = false;
+engine.pauseOnDocumentHidden = false;
 
 export function Reveal({ className, children }) {
   const reduced = useReducedMotion();
@@ -90,12 +90,11 @@ export function CountUp({ value, decimals = 0, suffix = "" }) {
 
     const state = { value: 0 };
     setDisplay(0);
-    const animation = anime({
-      targets: state,
+    const animation = animate(state, {
       value,
-      easing: "easeOutCubic",
+      ease: "outCubic",
       duration: 1200,
-      update: () => setDisplay(state.value),
+      onUpdate: () => setDisplay(state.value),
     });
 
     return () => animation.pause();
