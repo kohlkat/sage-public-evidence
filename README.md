@@ -131,6 +131,13 @@ simulation artifacts, evidence labels, unknown-value handling, source hashes,
 static downloads, crawler policy, security headers, canonical URLs, and
 public-copy disclosure boundaries.
 
+Every exported file under `public/data/` is checked byte-for-byte against its
+reviewed source, including aggregate JSON downloads outside the teaching
+simulation's historical checksum manifest. `npm run check:export-integrity`
+requires an existing build and tests corruption of each exported data copy;
+it restores every tested copy and leaves reviewed source artifacts unchanged.
+The regression check also runs as part of `npm run verify`.
+
 ## Deployment
 
 Vercel is the sole production host:

@@ -13,7 +13,8 @@
     "check:showcase-path": "node scripts/showcase-path-v4.mjs",
     "check:proprietary": "node scripts/scan-public-proprietary.mjs",
     "check:seo": "node scripts/verify-static-export.mjs",
-    "verify": "npm run check:simulation && npm run check:showcase-path && npm run check:replay && npm run check:proprietary && npm run build && npm run check:seo"
+    "verify": "npm run check:simulation && npm run check:showcase-path && npm run check:replay && npm run check:proprietary && npm run build && npm run check:seo && npm run check:export-integrity",
+    "check:export-integrity": "node scripts/test-export-integrity.mjs"
   },
   "dependencies": {
     "@react-spring/web": "^10.1.2",
