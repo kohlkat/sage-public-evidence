@@ -747,6 +747,19 @@ function sha256(content) {
 
 const sourceDataDirectory = path.resolve("public", "data");
 const exportedDataDirectory = path.join(outputDirectory, "data");
+
+// Every published data download must retain the reviewed source bytes, including
+// aggregates outside the teaching simulation's immutable checksum manifest.
+for (const entry of fs.readdirSync(sourceDataDirectory, { withFileTypes: true })) {
+  if (!entry.isFile()) continue;
+  const sourceBytes = fs.readFileSync(path.join(sourceDataDirectory, entry.name));
+  const exportedPath = path.join(exportedDataDirectory, entry.name);
+  assert(
+    fs.existsSync(exportedPath) &&
+      sourceBytes.equals(fs.readFileSync(exportedPath)),
+    `Public data export differs from reviewed source: ${entry.name}.`,
+  );
+}
 const simulationJsonText = fs.readFileSync(
   path.join(sourceDataDirectory, "sage-public-simulation-v1.json"),
   "utf8",
