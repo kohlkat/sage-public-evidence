@@ -21,7 +21,8 @@ export default function PrivacyPage() {
         <h1>Clear measurement, limited collection.</h1>
         <p className="legal-lead">
           SAGE Suite is a public project site. It has no accounts, checkout, or
-          embedded contact form.
+          embedded contact form. Requests for restricted material are handled on a
+          separate, linked access service, not on this site.
         </p>
 
         <h2>Optional analytics</h2>
