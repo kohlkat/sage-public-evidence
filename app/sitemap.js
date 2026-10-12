@@ -17,6 +17,12 @@ export default function sitemap() {
       priority: 1,
     },
     {
+      url: `${siteOrigin}/request-access/`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
       url: `${siteOrigin}/privacy/`,
       lastModified: new Date(),
       changeFrequency: "yearly",
