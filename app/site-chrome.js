@@ -49,6 +49,7 @@ export function SiteHeader() {
         <a href="/distributed/">Distributed</a>
         <a href="/research/">Research</a>
         <a href="/evidence/">Evidence</a>
+        <a href="/request-access/">Request access</a>
       </nav>
       <details className="mobile-menu">
         <summary aria-label="Navigation menu">
@@ -63,6 +64,7 @@ export function SiteHeader() {
           <a href="/distributed/">Distributed studies</a>
           <a href="/research/">Research</a>
           <a href="/evidence/">Evidence</a>
+          <a href="/request-access/">Request access</a>
           <a href="/#pilot">Discuss a pilot</a>
         </nav>
       </details>
